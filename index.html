@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <body>
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="./src/css/styles.css"
+        media="screen"
+      />
+    </head>
+
+    <div class="container">
+      <div class="formContainer">
+        <h3 class="title">Formulário</h3>
+
+        <form onsubmit="handleSubmit()" id="formUser" class="formSubmit">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="firstname"
+            placeholder="Gabriel Gomes"
+          />
+
+          <label for="age">Age</label>
+          <input type="text" id="age" name="age" placeholder="25" />
+
+          <label for="job">Job</label>
+          <input type="text" id="job" name="job" placeholder="Programador" />
+
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="programador@rethink.dev"
+          />
+
+          <label for="tel">Telephone</label>
+          <input
+            type="tel"
+            id="tel"
+            name="tel"
+            placeholder="(31) 9 9999-9999"
+          />
+
+          <label for="date">Created At</label>
+          <input type="text" id="createdAt" name="date" readonly="readonly" />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+    <script src="./src/js/index.js"></script>
+  </body>
+</html>
