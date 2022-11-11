@@ -22,6 +22,7 @@ const getFormUser = () => {
   }
   return formUser;
 };
+
 const form = document.getElementById("formUser");
 
 const handleSubmit = (e) => {
