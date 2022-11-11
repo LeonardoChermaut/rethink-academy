@@ -24,9 +24,8 @@ const getFormUser = () => {
 };
 const form = document.getElementById("formUser");
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-};
+const handleSubmit = (e) => e.preventDefault();
+
 form.addEventListener("click", handleSubmit, false);
 
 const getFormValueByName = (formElements, inputName) => formElements[inputName];
@@ -34,9 +33,7 @@ const getFormValueByName = (formElements, inputName) => formElements[inputName];
 console.log("addId");
 const addId = () =>
   users.map((item, i) => ({
-    id: Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1),
+    id: Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1),
     name: item.name,
     age: item.name,
   }));
@@ -55,6 +52,5 @@ const getByAge = () => users.filter((value) => value.age >= 18);
 console.log(getByAge());
 
 console.log("avarageAge");
-const avarageAge = () =>
-  users.reduce((acc, i) => (acc += i.age), 0) / users.length;
+const avarageAge = () => users.reduce((acc, i) => (acc += i.age), 0) / users.length;
 console.log(avarageAge());
