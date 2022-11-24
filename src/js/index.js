@@ -1,61 +1,66 @@
 const users = [
-  { name: "Fabiana Araújo", age: 33 },
-  { name: "Gabriel Gomes", age: 25 },
-  { name: "Fernando Henrique", age: 17 },
-  { name: "Ana Luiza", age: 2 },
-  { name: "Geralda", age: 93 },
-  { name: "Miguel Souza", age: 70 },
-  { name: "Antonio Miguel", age: 69 },
+  { name: "Fabiana Araújo", city: "Teresópolis",age: 33 },
+  { name: "Gabriel Gomes",city: "Florianópolis", age: 25 },
+  { name: "Fernando Henrique",city: "Curitiba",  age: 17 },
+  { name: "Ana Luiza", city: "Rio de Janeiro", age: 2 },
+  { name: "Geralda", city: "São Paulo",  age: 93 },
+  { name: "Miguel Souza", city: "Sana",  age: 70 },
+  { name: "Antonio Miguel", city: "Friburgo",  age: 69 },
 ];
 
-document.getElementById("createdAt").value = new Date().toLocaleDateString();
-const formElements = document.getElementById("formUser").elements;
+const getCities = users.map(all => all.city);
 
-const getFormUser = () => {
-  const formUser = {};
+const getCityByName = (name) => users.filter(c => c.city === name);
+console.log((getCityByName("Teresópolis")));
 
-  for (let index = 0; index < formElements.length; index++) {
-    const element = formElements[index];
-    if (element.type !== "submit") {
-      formUser[element.name] = element.value;
-    }
-  }
-  return formUser;
-};
+// document.getElementById("createdAt").value = new Date().toLocaleDateString();
+// const formElements = document.getElementById("formUser").elements;
 
-const form = document.getElementById("formUser");
+// const getFormUser = () => {
+//   const formUser = {};
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-};
-form.addEventListener("click", handleSubmit, false);
+//   for (let index = 0; index < formElements.length; index++) {
+//     const element = formElements[index];
+//     if (element.type !== "submit") {
+//       formUser[element.name] = element.value;
+//     }
+//   }
+//   return formUser;
+// };
 
-const getFormValueByName = (formElements, inputName) => formElements[inputName];
+// const form = document.getElementById("formUser");
 
-console.log("addId");
-const addId = () =>
-  users.map((item, i) => ({
-    id: Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1),
-    name: item.name,
-    age: item.name,
-  }));
-console.table(addId());
+// const handleSubmit = (e) => {
+//   e.preventDefault();
+// };
+// form.addEventListener("click", handleSubmit, false);
 
-console.log("getByName");
-const getByName = (name) => users.filter((value) => value.name === name);
-console.log(getByName("Gabriel Gomes")[0]);
+// const getFormValueByName = (formElements, inputName) => formElements[inputName];
 
-console.log("getNames");
-const getNames = () => users.map((user) => user.name);
-console.table(getNames());
+// console.log("addId");
+// const addId = () =>
+//   users.map((item, i) => ({
+//     id: Math.floor((1 + Math.random()) * 0x10000)
+//       .toString(16)
+//       .substring(1),
+//     name: item.name,
+//     age: item.name,
+//   }));
+// console.table(addId());
 
-console.log("getByAge");
-const getByAge = () => users.filter((value) => value.age >= 18);
-console.log(getByAge());
+// console.log("getByName");
+// const getByName = (name) => users.filter((value) => value.name === name);
+// console.log(getByName("Gabriel Gomes")[0]);
 
-console.log("avarageAge");
-const avarageAge = () =>
-  users.reduce((acc, i) => (acc += i.age), 0) / users.length;
-console.log(avarageAge());
+// console.log("getNames");
+// const getNames = () => users.map((user) => user.name);
+// console.table(getNames());
+
+// console.log("getByAge");
+// const getByAge = () => users.filter((value) => value.age >= 18);
+// console.log(getByAge());
+
+// console.log("avarageAge");
+// const avarageAge = () =>
+//   users.reduce((acc, i) => (acc += i.age), 0) / users.length;
+// console.log(avarageAge());
